@@ -1,4 +1,4 @@
-package qa.lesson1.task1;
+package qa.lesson2.task1;
 
 import org.junit.Test;
 import org.openqa.selenium.*;

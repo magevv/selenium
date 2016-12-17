@@ -1,4 +1,4 @@
-package qa.lesson1.task3;
+package qa.lesson2.task3;
 
 import org.junit.After;
 import org.junit.Before;
