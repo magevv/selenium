@@ -7,11 +7,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /*
@@ -51,16 +49,10 @@ public class NavigateMenu {
     }
 
     private void rotateAndClick(String selector) {
-        List<WebElement> elements;
-
-        elements = driver.findElements(By.cssSelector(selector));
-        int counter = 1;
-        for (WebElement element : elements) {
-            driver.findElement(By.cssSelector(selector + ":nth-child(" + counter + ")")).click();
-
+        int num = driver.findElements(By.cssSelector(selector)).size();
+        for (int i = 1; i <= num; i++) {
+            driver.findElement(By.cssSelector(selector + ":nth-child(" + i + ")")).click();
             Assert.assertTrue(driver.findElement(By.tagName("h1")).isDisplayed());
-
-            counter++;
             rotateAndClick(selector + " ul > li");
         }
     }
