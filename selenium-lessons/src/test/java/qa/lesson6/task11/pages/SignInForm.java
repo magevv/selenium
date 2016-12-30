@@ -86,11 +86,7 @@ public class SignInForm {
     }
 
     private Boolean isChecked(WebElement checkbox) {
-
-        if (checkbox.getAttribute("checked").equals("checked")) {
-            return true;
-        }
-        return false;
+        return checkbox.getAttribute("checked").equals("checked");
     }
 
 }

@@ -7,6 +7,8 @@ import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,13 +47,15 @@ public class TestBase {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         driver = new ChromeDriver(options);
+        //driver = new FirefoxDriver();
+        //driver = new InternetExplorerDriver();
         System.out.println(((HasCapabilities) driver).getCapabilities());
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @After
     public void stop() {
-        driver.close();
-        driver.quit();
+       driver.close();
+       driver.quit();
     }
 }
