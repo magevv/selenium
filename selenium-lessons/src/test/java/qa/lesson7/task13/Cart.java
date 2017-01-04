@@ -1,5 +1,6 @@
 package qa.lesson7.task13;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -42,14 +43,13 @@ public class Cart extends TestBase {
             openMainPage();
             driver.findElements(By.cssSelector("#box-most-popular li")).get(0).click();
 
-            // This is for handling products with mandatory option "size", if it is present.
+            // This try-catch block handles products with mandatory option "size".
             try {
                 new Select(driver.findElement(By.name("options[Size]"))).selectByValue("Small");
             } catch (Exception e) {
-            } finally {
-                driver.findElement(By.name("add_cart_product")).click();
-                waitUntilCartRefreshed();
             }
+            driver.findElement(By.name("add_cart_product")).click();
+            waitUntilCartRefreshed();
         }
     }
 
@@ -58,7 +58,6 @@ public class Cart extends TestBase {
             while (driver.findElement(By.name("remove_cart_item")).isEnabled()) {
                 driver.findElement(By.name("remove_cart_item")).click();
                 waitUntilCartTableRefreshed();
-                System.out.println(driver.findElement(By.cssSelector(".footer td:last-child")).getText());
             }
         } catch (Exception e) {
         }
@@ -67,11 +66,11 @@ public class Cart extends TestBase {
     @Test
     public void testCart() {
 
-        addToCart(6);
-
+        addToCart(3);
         driver.findElement(By.id("cart")).click();
-
         removeAllFromCart();
+        WebElement emptyCart = driver.findElement(By.cssSelector("#checkout-cart-wrapper p"));
+        Assert.assertTrue(emptyCart.getText().equals("There are no items in your cart."));
 
     }
 }
