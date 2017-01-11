@@ -60,9 +60,9 @@ public class Windows extends TestBase {
         country.get(0).findElement(By.cssSelector("td:nth-child(7) a")).click();
 
         List<WebElement> links = driver.findElements(By.cssSelector(".fa-external-link"));
+        String mainWindow = driver.getWindowHandle();
+        Set<String> oldWindows = driver.getWindowHandles();
         for (WebElement link : links) {
-            String mainWindow = driver.getWindowHandle();
-            Set<String> oldWindows = driver.getWindowHandles();
             link.click();
             String newWindow = wait.until(thereIsWindowOtherThan(oldWindows));
             driver.switchTo().window(newWindow);
@@ -83,9 +83,9 @@ public class Windows extends TestBase {
         country.get(0).findElement(By.cssSelector("td:nth-child(7) a")).click();
 
         List<WebElement> links = driver.findElements(By.cssSelector(".fa-external-link"));
+        String mainWindow = driver.getWindowHandle();
+        Set<String> oldWindows = driver.getWindowHandles();
         for (WebElement link : links) {
-            String mainWindow = driver.getWindowHandle();
-            Set<String> oldWindows = driver.getWindowHandles();
             link.click();
             wait.until(ExpectedConditions.numberOfWindowsToBe(oldWindows.size() + 1));
             driver.switchTo().window(getNewWindowHandle(oldWindows));
