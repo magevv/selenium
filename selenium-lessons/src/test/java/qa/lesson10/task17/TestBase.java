@@ -7,6 +7,7 @@ import org.openqa.selenium.HasCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class TestBase {
 
-    public WebDriver driver;
+    public EventFiringWebDriver driver;
 
     public String baseURL = "http://localhost/litecart";
 
@@ -43,10 +44,11 @@ public class TestBase {
     public void start() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
-        driver = new ChromeDriver(options);
+        driver = new EventFiringWebDriver(new ChromeDriver(options));
+        driver.register(new MyListener());
         //driver = new FirefoxDriver();
         //driver = new InternetExplorerDriver();
-        System.out.println(((HasCapabilities) driver).getCapabilities());
+//        System.out.println(((HasCapabilities) driver).getCapabilities());
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

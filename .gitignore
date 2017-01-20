@@ -1,6 +1,9 @@
 Thumbs.db
 *.class
+*.avi
+*.png
 .idea/
+video/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

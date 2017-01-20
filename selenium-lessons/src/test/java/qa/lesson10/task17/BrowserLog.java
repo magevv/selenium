@@ -1,6 +1,9 @@
 package qa.lesson10.task17;
 
+import com.automation.remarks.junit.VideoRule;
+import com.automation.remarks.video.annotations.Video;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,7 +25,11 @@ import java.util.List;
 
 public class BrowserLog extends TestBase {
 
+    @Rule
+    public VideoRule videoRule = new VideoRule();
+
     @Test
+    @Video(name = "BrowserLogTest")
     public void checkBrowserLog() {
         LogEntries log;
         login();
