@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- Product Page
+ ProductPage Page
  */
 public class ProductPage extends AbstractPage {
 

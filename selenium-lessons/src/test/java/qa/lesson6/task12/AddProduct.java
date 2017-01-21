@@ -8,7 +8,7 @@ import qa.lesson6.task12.pages.*;
 /*
 Сделайте сценарий для добавления нового товара (продукта) в учебном приложении litecart (в админке).
 
-Для добавления товара нужно открыть меню Catalog, в правом верхнем углу нажать кнопку "Add New Product",
+Для добавления товара нужно открыть меню Catalog, в правом верхнем углу нажать кнопку "Add New ProductPage",
 заполнить поля с информацией о товаре и сохранить.
 
 Достаточно заполнить только информацию на вкладках General, Information и Prices.
@@ -27,7 +27,7 @@ public class AddProduct extends TestBase {
 
         driver.findElement(By.xpath("//ul[@id='box-apps-menu']/li[2]")).click();
 
-        driver.findElement(By.partialLinkText("Add New Product")).click();
+        driver.findElement(By.partialLinkText("Add New ProductPage")).click();
 
         Tabs tabs = new Tabs(driver);
 

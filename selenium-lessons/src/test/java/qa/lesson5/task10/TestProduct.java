@@ -35,7 +35,7 @@ public class TestProduct extends TestBase {
 
         mainPage.getFirstProductInCampaigns().click();
 
-        // Test Product Data
+        // Test ProductPage Data
         Assert.assertTrue(productPage.getProductURL().equals(baseURL + "/en/rubber-ducks-c-1/subcategory-c-2/yellow-duck-p-1"));
         Assert.assertTrue(productPage.getProductName().equals("Yellow Duck"));
         Assert.assertTrue(productPage.getProductRegularPrice().equals("$20"));
