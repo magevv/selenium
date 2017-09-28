@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile 'org.seleniumhq.selenium:selenium-java:3.0.1'
+    testCompile 'org.seleniumhq.selenium:selenium-java:3.+'
     compile group: 'com.automation-remarks', name: 'video-recorder-junit', version: '1.+'
+    compile group: 'com.applitools', name: 'eyes-selenium-java', version: 'RELEASE'
 }

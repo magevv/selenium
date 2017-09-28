@@ -25,7 +25,7 @@ public class LoginFirefoxNightly {
 
         DesiredCapabilities caps = new DesiredCapabilities();
 
-        driver = new FirefoxDriver(
+       /* driver = new FirefoxDriver(
                 new FirefoxBinary(new File("C:\\Program Files\\FirefoxNightly\\firefox.exe")),
                 new FirefoxProfile(), caps);
 
@@ -34,7 +34,7 @@ public class LoginFirefoxNightly {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 5);*/
     }
 
     @After

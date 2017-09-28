@@ -26,7 +26,7 @@ public class LoginFirefoxOldScheme {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(FirefoxDriver.MARIONETTE, false);
 
-        driver = new FirefoxDriver(
+        /*driver = new FirefoxDriver(
                 new FirefoxBinary(new File("C:\\Program Files (x86)\\Mozilla FirefoxESR\\firefox.exe")),
                 new FirefoxProfile(), caps);
 
@@ -34,7 +34,7 @@ public class LoginFirefoxOldScheme {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 5);*/
     }
 
     @After

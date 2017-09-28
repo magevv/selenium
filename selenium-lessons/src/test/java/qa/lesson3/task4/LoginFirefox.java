@@ -23,7 +23,7 @@ public class LoginFirefox {
     @Before
     public void start() {
 
-        DesiredCapabilities caps = new DesiredCapabilities();
+       /* DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability(FirefoxDriver.MARIONETTE, true);
 
         driver = new FirefoxDriver(
@@ -35,7 +35,7 @@ public class LoginFirefox {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, 5);*/
     }
 
     @After
